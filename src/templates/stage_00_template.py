@@ -8,7 +8,7 @@ from src.components import StageClass
 
 STAGE = "Stage name" ## <<< change stage name 
 
-# init logger
+## init logger
 logger()
 
 

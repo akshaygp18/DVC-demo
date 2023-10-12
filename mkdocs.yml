@@ -8,7 +8,7 @@ site_author: Sunny Bhaveen Chandra
 site_description: >-
   DESCRIPTION
 
-# Repository
+## Repository
 repo_name: c17hawke/REPO_NAME
 repo_url: https://github.com/c17hawke/REPO_NAME
 

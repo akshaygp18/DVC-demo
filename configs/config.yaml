@@ -1,4 +1,4 @@
-# It contains all the configs required in the project
+## It contains all the configs required in the project
 
 artifacts:
   ARTIFACTS_DIR: artifacts
