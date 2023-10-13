@@ -1,0 +1,57 @@
+schema: '2.0'
+stages:
+  stage_one:
+    cmd: python src/stage_01.py
+    deps:
+    - path: src/stage_01.py
+      hash: md5
+      md5: c7b6663f2b14a71a7ac7e0fc8a729e95
+      size: 106
+    outs:
+    - path: output.txt
+      hash: md5
+      md5: f0abb9e03c10bc373b4b9d338d1870c5
+      size: 32
+  stage_two:
+    cmd: python src/stage_02.py
+    deps:
+    - path: output.txt
+      hash: md5
+      md5: f0abb9e03c10bc373b4b9d338d1870c5
+      size: 32
+    - path: src/stage_02.py
+      hash: md5
+      md5: 70eb7f5a1426cc8439c51811dd4e14db
+      size: 223
+    outs:
+    - path: output2.txt
+      hash: md5
+      md5: d918a55a13086ba34b4f110cf3ae92ab
+      size: 32
+  stage_three:
+    cmd: python src/stage_03.py
+    deps:
+    - path: output.txt
+      hash: md5
+      md5: f0abb9e03c10bc373b4b9d338d1870c5
+      size: 32
+    - path: src/stage_03.py
+      hash: md5
+      md5: 96148f0822b8274aa1d9d18098fc60a1
+      size: 155
+  get_data:
+    cmd: python src/stage_01.py
+    deps:
+    - path: src/stage_01.py
+      hash: md5
+      md5: 407d2a1f05ff19bef8289a17d2362527
+      size: 1590
+    - path: src/utils/common.py
+      hash: md5
+      md5: 08ca652fcfd7c74a44d2533cd1741cf3
+      size: 680
+    outs:
+    - path: artifacts/raw_local_dir/data.csv
+      hash: md5
+      md5: 04f080035b3a88739000beda2b0a9ab6
+      size: 93599
