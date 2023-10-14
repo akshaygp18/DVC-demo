@@ -140,6 +140,7 @@ configs/secrets.yaml
 # add your env folder here if its there
 
 output.txt
-
+test.csv
+train.csv
 
 /output2.txt
