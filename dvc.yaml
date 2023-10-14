@@ -8,18 +8,18 @@ stages:
     outs:
     - artifacts/raw_local_dir/data.csv
 
-  # stage_two:
-  #   cmd: python src/stage_02.py
-  #   deps:
-  #   - src/stage_02.py
-  #   - output.txt
-  #   outs:
-  #   - output2.txt
+  stage_two:
+    cmd: python src/stage_02.py
+    deps:
+    - src/stage_02.py
+    - artifacts/raw_local_dir/data.csv
+    outs:
+    - 
 
-  # stage_three:
-  #   cmd: python src/stage_03.py
-  #   deps:
-  #   - src/stage_03.py
-  #   - output.txt
+  stage_three:
+    cmd: python src/stage_03.py
+    deps:
+    - src/stage_03.py
+    - output.txt
 
 
