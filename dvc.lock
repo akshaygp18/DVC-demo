@@ -55,3 +55,27 @@ stages:
       hash: md5
       md5: 04f080035b3a88739000beda2b0a9ab6
       size: 93599
+  split_data:
+    cmd: python src/stage_02.py
+    deps:
+    - path: artifacts/raw_local_dir/data.csv
+      hash: md5
+      md5: 04f080035b3a88739000beda2b0a9ab6
+      size: 93599
+    - path: src/stage_02.py
+      hash: md5
+      md5: 5bf6baab4828308bcd6ef101d2ec477c
+      size: 2514
+    - path: src/utils/common.py
+      hash: md5
+      md5: 08ca652fcfd7c74a44d2533cd1741cf3
+      size: 680
+    outs:
+    - path: artifacts/split_data_dir/test.csv
+      hash: md5
+      md5: b11e615db46a8445304deca900f4b440
+      size: 28169
+    - path: artifacts/split_data_dir/train.csv
+      hash: md5
+      md5: 364b93bad26ec661fd3be89c2db3d7cf
+      size: 65577
