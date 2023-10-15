@@ -28,3 +28,15 @@ stages:
     - artifacts/model_dir/model.pkl
 
 
+  evaluate:
+    cmd: python src/stage_04.py
+    deps:
+    - src/stage_04.py
+    - src/utils/common.py
+    - artifacts/split_data_dir/test.csv
+    - artifacts/model_dir/model.pkl
+    - configs/config.yaml
+    - params.yaml
+    metrics:
+      - scores.json:
+          cache: false
