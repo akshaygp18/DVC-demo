@@ -17,4 +17,14 @@ bash init_setup.sh
 dvc init
 ```
 
+### STEP 05- To run the stages in the dvc project
+```bash
+dvc repro  or dvc repro --force
+```
+
+### STEP 06- To check the relationship between the stages in the dvc project
+```bash
+dvc dag
+```
+
 ### STEP 06- commit and push the changes to the remote repository
