@@ -1,44 +1,5 @@
 schema: '2.0'
 stages:
-  stage_one:
-    cmd: python src/stage_01.py
-    deps:
-    - path: src/stage_01.py
-      hash: md5
-      md5: c7b6663f2b14a71a7ac7e0fc8a729e95
-      size: 106
-    outs:
-    - path: output.txt
-      hash: md5
-      md5: f0abb9e03c10bc373b4b9d338d1870c5
-      size: 32
-  stage_two:
-    cmd: python src/stage_02.py
-    deps:
-    - path: output.txt
-      hash: md5
-      md5: f0abb9e03c10bc373b4b9d338d1870c5
-      size: 32
-    - path: src/stage_02.py
-      hash: md5
-      md5: 70eb7f5a1426cc8439c51811dd4e14db
-      size: 223
-    outs:
-    - path: output2.txt
-      hash: md5
-      md5: d918a55a13086ba34b4f110cf3ae92ab
-      size: 32
-  stage_three:
-    cmd: python src/stage_03.py
-    deps:
-    - path: output.txt
-      hash: md5
-      md5: f0abb9e03c10bc373b4b9d338d1870c5
-      size: 32
-    - path: src/stage_03.py
-      hash: md5
-      md5: 96148f0822b8274aa1d9d18098fc60a1
-      size: 155
   get_data:
     cmd: python src/stage_01.py
     deps:
@@ -79,3 +40,23 @@ stages:
       hash: md5
       md5: 364b93bad26ec661fd3be89c2db3d7cf
       size: 65577
+  train:
+    cmd: python src/stage_03.py
+    deps:
+    - path: artifacts/split_data_dir/train.csv
+      hash: md5
+      md5: 364b93bad26ec661fd3be89c2db3d7cf
+      size: 65577
+    - path: src/stage_03.py
+      hash: md5
+      md5: 4c0bfeb26e08b5579b4eae760d1eb7de
+      size: 3009
+    - path: src/utils/common.py
+      hash: md5
+      md5: 08ca652fcfd7c74a44d2533cd1741cf3
+      size: 680
+    outs:
+    - path: artifacts/model_dir/model.pkl
+      hash: md5
+      md5: b6a9741070e14ef393ed3093fa28e66d
+      size: 1231
