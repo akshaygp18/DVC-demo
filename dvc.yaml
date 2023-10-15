@@ -18,10 +18,13 @@ stages:
     - artifacts/split_data_dir/train.csv
     - artifacts/split_data_dir/test.csv
 
-  stage_three:
+  train:
     cmd: python src/stage_03.py
     deps:
     - src/stage_03.py
-    - output.txt
+    - src/utils/common.py
+    - artifacts/split_data_dir/train.csv
+    outs:
+    - artifacts/model_dir/model.pkl
 
 
