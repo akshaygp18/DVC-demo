@@ -60,3 +60,35 @@ stages:
       hash: md5
       md5: b6a9741070e14ef393ed3093fa28e66d
       size: 1231
+  evaluate:
+    cmd: python src/stage_04.py
+    deps:
+    - path: artifacts/model_dir/model.pkl
+      hash: md5
+      md5: b6a9741070e14ef393ed3093fa28e66d
+      size: 1231
+    - path: artifacts/split_data_dir/test.csv
+      hash: md5
+      md5: b11e615db46a8445304deca900f4b440
+      size: 28169
+    - path: configs/config.yaml
+      hash: md5
+      md5: 4a33d44d6b9b45ac2d1b03a7a4abbe22
+      size: 406
+    - path: params.yaml
+      hash: md5
+      md5: bda2f47547ccf54074c7341dd8b0ff33
+      size: 189
+    - path: src/stage_04.py
+      hash: md5
+      md5: b0205cf0ef6b460348edcb020efff553
+      size: 3226
+    - path: src/utils/common.py
+      hash: md5
+      md5: 08ca652fcfd7c74a44d2533cd1741cf3
+      size: 680
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 24afcdde52f59661f424f7de43b7a39b
+      size: 100
